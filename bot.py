@@ -13,7 +13,7 @@ class MyClient(discord.Client):
             return
 
         if message.content:
-            with open("stefans_quotes.txt", "r", encoding="utf-8") as file:
+            with open("stefan_quotes.txt", "r", encoding="utf-8") as file:
                 quotes = file.readlines()
 
             if quotes:
