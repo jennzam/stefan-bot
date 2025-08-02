@@ -13,15 +13,15 @@ class MyClient(discord.Client):
         if message.author == self.user:
             return
 
-        try:
+        if message.content or message.attachments:
             with open("stefan_quotes.txt", "r", encoding="utf-8") as file:
                 quotes = file.readlines()
 
             if quotes:
+                import random
                 quote = random.choice(quotes).strip()
                 await message.channel.send(quote)
-        except Exception as e:
-            print(f"Uh oh: {e}")
+
 
 intents = discord.Intents.default()
 intents.message_content = True
