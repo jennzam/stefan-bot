@@ -18,7 +18,6 @@ class MyClient(discord.Client):
                 quotes = file.readlines()
 
             if quotes:
-                import random
                 quote = random.choice(quotes).strip()
                 await message.channel.send(quote)
 
